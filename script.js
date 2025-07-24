@@ -25,7 +25,11 @@ getCategories();
 categoryMenu.addEventListener("input", (e) => {
 	localStorage.setItem("categoryName", categoryMenu.value);
 	cards.innerHTML = "";
-	getMeals();
+	getMeals().then(() => {
+		//! Auto Scroll To Cards That I choose Its Category
+		cards.scrollIntoView({ behavior: "smooth", block: "start" });
+	});
+	cards.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 getMeals();
 
@@ -90,7 +94,7 @@ async function getMealDetails(mealId) {
 		//! Add Ingredients To Meal Details (Overlay)
 		for (let i = 0; i < ingredients.length; i++) {
 			let ul = document.querySelector(".ingredients ul");
-			ul.innerHTML += `<li><b>${measures[i]}</b> ${ingredients[i]}</li>`;
+			ul.innerHTML += `<li>${measures[i]} ${ingredients[i]}</li>`;
 		}
 
 		//! Close Meal Details (Overlay)
@@ -115,6 +119,8 @@ search.addEventListener("input", async (e) => {
 		cards.innerHTML = "";
 		getMeals();
 	}
+	//! Auto Scroll To Cards That I Search For
+	cards.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
 //! Show Cards

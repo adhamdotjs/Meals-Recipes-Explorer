@@ -96,12 +96,12 @@ body {
 }
 
 .overlay .container .meal-data {
-	width: 90%;
+	width: 100%;
 	max-width: 700px;
 	overflow-y: auto;
 	max-height: 90vh;
 	background-color: #ebe5c4;
-	padding: 50px;
+	padding: 15px;
 	border-radius: 20px 0 0 20px;
 	-webkit-border-radius: 20px 0 0 20px;
 	-moz-border-radius: 20px 0 0 20px;
@@ -123,8 +123,8 @@ body {
 	border: none;
 	cursor: pointer;
 	position: absolute;
-	right: 25px;
-	top: 25px;
+	right: 10px;
+	top: 10px;
 	outline: none;
 	transition: var(--main-transition);
 	-webkit-transition: var(--main-transition);
